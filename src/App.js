@@ -56,7 +56,7 @@ function App() {
             setLogin(true);
         }
         else setLogin(false);
-        // console.log(event, session)
+        console.log(event, session)
     })
 
     async function submitForm() {

@@ -16,16 +16,16 @@ export default function Navbar({supabase,login}) {
 
     function closeModal() {setIsOpen(false);setUserEmail('');}
 
-    // async function loginUser() {
-    //     // let { data, error } = await supabase.auth.signInWithOtp({
-    //     //     email: userEmail
-    //     // })
-    //     let { data, error } = await supabase.auth.signInWithOtp({
-    //         email: 'jonas.kaatz95@gmail.com'
-    //     })
-    //     console.log(data);
-    //     console.log(error);
-    // }
+    async function loginUser() {
+        // let { data, error } = await supabase.auth.signInWithOtp({
+        //     email: userEmail
+        // })
+        let { data, error } = await supabase.auth.signInWithOtp({
+            email: 'jonas.kaatz95@gmail.com'
+        })
+        console.log(data);
+        console.log(error);
+    }
     return (
         <nav className="flex flex-col items-center w-full bg-white">
             <div className="w-full md:w-3/4 lg:w-2/3 flex items-center justify-between h-16 px-4 max-w-7xl">
@@ -54,7 +54,7 @@ export default function Navbar({supabase,login}) {
                             // providers={["google", "facebook", "github"]}
                         />
                         {/* <input className="px-4 py-2 rounded-xl border" type='text' value={userEmail} onChange={handleEmailChange} placeholder='Email'/> */}
-                        {/* <button className="flex justify-center items-center py-2 w-24 text-center bg-indigo-500 rounded-lg text-white" onClick={loginUser}>Login</button> */}
+                        <button className="flex justify-center items-center py-2 w-24 text-center bg-indigo-500 rounded-lg text-white" onClick={loginUser}>Login</button>
                     </div>
                 </div>
             </Modal>
